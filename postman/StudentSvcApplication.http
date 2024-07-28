@@ -1,0 +1,83 @@
+GET http://127.0.0.1:8080/v1/students
+Accept: application/json
+
+<> 2024-07-27T231617.200.json
+
+###
+
+GET http://127.0.0.1:8080/v1/subjects
+
+<> 2024-07-27T232815.200.json
+<> 2024-07-27T232638.200.json
+<> 2024-07-27T232632.200.json
+<> 2024-07-27T232136.200.json
+
+###
+
+POST http://127.0.0.1:8080/v1/subjects
+Content-Type: application/json
+Accept: application/json
+
+{
+"subjectName" : "Tamil"
+}
+
+<> 2024-07-27T232808.200.json
+<> 2024-07-27T232729.415.json
+
+###
+POST http://127.0.0.1:8080/v1/students
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "Shanaya",
+  "lastName": "Karuneegar",
+  "sex": "female",
+  "sectionId": 3,
+  "age": 8
+}
+
+<> 2024-07-28T000531.200.json
+<> 2024-07-28T000519.200.json
+<> 2024-07-28T000445.200.json
+<> 2024-07-28T000319.400.json
+
+###
+
+GET http://127.0.0.1:8080/v1/students
+###
+PUT http://localhost:8080/v1/students/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 2,
+  "firstName": "Shanaya",
+  "lastName": "Karuneegar",
+  "sex": "female",
+  "age": 8,
+  "sectionId": 3,
+  "marks": [{
+    "studentId": 2,
+    "subjectId": 1,
+    "marks": 85
+  },{
+    "studentId": 2,
+    "subjectId": 2,
+    "marks": 83
+  },{
+    "studentId": 2,
+    "subjectId": 3,
+    "marks": 75
+  },{
+    "studentId": 2,
+    "subjectId": 4,
+    "marks": 70
+  },{
+    "studentId": 2,
+    "subjectId": 5,
+    "marks": 80
+  }
+  ]
+}

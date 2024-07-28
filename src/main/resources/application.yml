@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: student-svc
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: adminPass
+        url: jdbc:postgresql://localhost:5432/springlearn
+        username: root
+    liquibase:
+        change-log: classpath:/db/changelog/db.changelog-master.xml
+        driver-class-name: org.postgresql.Driver
+        password: adminPass
+        url: jdbc:postgresql://localhost:5432/springlearn
+        user: root
