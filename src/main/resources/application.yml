@@ -12,3 +12,9 @@ spring:
         password: adminPass
         url: jdbc:postgresql://localhost:5432/springlearn
         user: root
+        enabled: true
+
+    jpa:
+        show-sql: true
+
+

@@ -12,35 +12,32 @@ import lombok.ToString;
 @Table(name = "student")
 public class StudentDao {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_id_gen")
-    @SequenceGenerator(name = "student_id_gen", sequenceName = "student_student_id_seq", allocationSize = 1)
-    @Column(name = "student_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "studentid", nullable = false)
     private Long id;
 
-    @Column(name = "first_name", length = Integer.MAX_VALUE)
+    @Column(name = "firstname", length = Integer.MAX_VALUE)
     private String firstName;
 
-    @Column(name = "last_name", length = Integer.MAX_VALUE)
+    @Column(name = "lastname", length = Integer.MAX_VALUE)
     private String lastName;
 
-    @Column(name = "sex", length = Integer.MAX_VALUE)
-    private String sex;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender", length = Integer.MAX_VALUE)
+    private Gender gender;
 
     @Column(name = "age")
     private Integer age;
 
-    @Column(name = "section_id")
-    private Long sectionId;
 
     public StudentDao() {}
 
     public StudentDao(Student student){
         super();
         this.setAge(student.age());
-        this.setSex(student.sex());
+        this.setGender(student.gender());
         this.setFirstName(student.firstName());
         this.setLastName(student.lastName());
-        this.setSectionId(student.sectionId());
     }
 
 }

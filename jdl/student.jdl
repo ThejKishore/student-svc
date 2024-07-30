@@ -1,0 +1,43 @@
+application {
+  config {
+    baseName studentSvc
+    applicationType monolith
+    packageName com.kish.learn.studentsvc
+    prodDatabaseType postgresql
+  }
+  entities *
+}
+
+enum Gender{
+  MALE,
+  FEMALE
+}
+
+entity Student{
+  id Long unique required,
+  firstName String required maxlength(32),
+  lastName String required maxlength(50),
+  age Integer required min(5) max(17),
+  sex Gender,
+}
+
+enum Subject{
+  ENGLISH,
+  MATH,
+  PHYSICS,
+  CHEMISTRY,
+  BOTANY,
+  ZOOLOGY
+}
+
+entity StudentMarks{
+  markId Long,
+  subjectName Subject,
+  subjectMark Integer
+}
+
+relationship OneToMany{
+  Student to StudentMarks
+}
+
+dto all with mapstruct
